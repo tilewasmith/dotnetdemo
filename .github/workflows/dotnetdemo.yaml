@@ -10,8 +10,8 @@ env:
     CHART_OVERRIDE_PATH: ./charts/values.yaml
     CHART_OVERRIDES: image.repository=cdacn.azurecr.io/dotnetdemo,image.tag=${{ github.sha }}
     CHART_PATH: ./charts
-    CLUSTER_NAME: aks-azure
-    CLUSTER_RESOURCE_GROUP: aks-azure
+    CLUSTER_NAME: aks-course
+    CLUSTER_RESOURCE_GROUP: aks-course
     CONTAINER_NAME: dotnetdemo
 jobs:
     buildImage:
