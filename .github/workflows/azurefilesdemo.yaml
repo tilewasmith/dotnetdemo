@@ -12,6 +12,9 @@ jobs:
           DOTNET_INSTALL_DIR: "./.dotnet"        
         steps:
             - uses: actions/checkout@v4
+            - name: Sleep for 500 seconds
+              run: sleep 500s
+              shell: bash            
             - name: Install cURL Headers
               run: |
                 sudo apt-get update
