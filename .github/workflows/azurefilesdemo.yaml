@@ -17,4 +17,6 @@ jobs:
             - uses: actions/setup-dotnet@v4
               with:
                 dotnet-version: '6.x'
+              env:
+                DOTNET_INSTALL_DIR: "./.dotnet"
             - run: dotnet build dotnetdemo.csproj
