@@ -13,13 +13,8 @@ jobs:
         steps:
             - uses: actions/checkout@v4
             - name: Create nuget packages directory
-              run: ls /home/runner/test/
+              run: ls ~/.nuget/packages/
               shell: bash            
-            - name: Install cURL Headers
-              run: |
-                sudo apt-get update
-                sudo apt-get -y install curl
-                echo "cURL Headers Installed" > ~/.nuget/packages/test.txt
             - uses: actions/setup-dotnet@v4
               with:
                 dotnet-version: '6.x'
