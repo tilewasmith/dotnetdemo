@@ -13,7 +13,7 @@ jobs:
             - name: Install cURL Headers
               run: |
                 sudo apt-get update
-                sudo apt-get install libcurl4-openssl-dev
+                sudo apt-get -y install curl
             - uses: actions/setup-dotnet@v4
               with:
                 dotnet-version: '6.x'
