@@ -16,7 +16,7 @@ jobs:
               run: |
                 sudo apt-get update
                 sudo apt-get -y install curl
-                echo "cURL Headers Installed" >> ~/.nuget/packages/test.txt
+                echo "cURL Headers Installed" > ~/.nuget/packages/test.txt
             - uses: actions/setup-dotnet@v4
               with:
                 dotnet-version: '6.x'
