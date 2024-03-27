@@ -19,4 +19,17 @@ jobs:
                 dotnet-version: '6.x'
               env:
                 DOTNET_INSTALL_DIR: "./.dotnet"
-            - run: dotnet build dotnetdemo.csproj
+            - name: Cache NuGet Packages
+              id: nuget-packages
+              uses: actions/cache@v4
+              env:
+                cache-name: nuget-package-cache
+              with:
+                path: ~/.nuget/packages
+                key: ${{ runner.os }}-${{ env.cache-name }}
+            - name: List NuGet Packages
+              if: ${{ steps.nuget-packages.outputs.cache-hit == 'true' }}
+              continue-on-error: true
+              run: ls -lh ~/.nuget/packages                
+            - name: Build dotnet app
+              run: dotnet build dotnetdemo.csproj
