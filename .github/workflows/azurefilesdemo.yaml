@@ -13,7 +13,7 @@ jobs:
         steps:
             - uses: actions/checkout@v4
             - name: Create nuget packages directory
-              run: ls ~/.nuget/packages
+              run: ls /home/runner/test/
               shell: bash            
             - name: Install cURL Headers
               run: |
