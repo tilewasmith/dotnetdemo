@@ -12,8 +12,8 @@ jobs:
           DOTNET_INSTALL_DIR: "./.dotnet"        
         steps:
             - uses: actions/checkout@v4
-            - name: Sleep for 500 seconds
-              run: sleep 500s
+            - name: Create nuget packages directory
+              run: ls ~/.nuget/packages
               shell: bash            
             - name: Install cURL Headers
               run: |
