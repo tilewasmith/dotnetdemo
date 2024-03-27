@@ -20,4 +20,4 @@ jobs:
               with:
                 dotnet-version: '6.x'
             - name: Build dotnet app
-              run: dotnet build dotnetdemo.csproj
+              run: dotnet restore dotnetdemo.csproj
