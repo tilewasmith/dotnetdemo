@@ -9,7 +9,7 @@ jobs:
     build:
         runs-on: arc-runner-set
         env:
-          NUGET_PACKAGES: /home/runner/_work/.nuget/packages
+          NUGET_PACKAGES: /home/runner/.nuget/packages
         steps:
             - uses: actions/checkout@v4
             - name: Install cURL Headers
@@ -27,11 +27,11 @@ jobs:
               env:
                 cache-name: nuget-package-cache
               with:
-                path: /home/runner/_work/.nuget/packages
+                path: /home/runner/.nuget/packages
                 key: ${{ runner.os }}-${{ env.cache-name }}
             - name: List NuGet Packages
               if: ${{ steps.nuget-packages.outputs.cache-hit == 'true' }}
               continue-on-error: true
-              run: ls -lh /home/runner/_work/.nuget/packages                
+              run: ls -lh /home/runner/.nuget/packages                
             - name: Build dotnet app
               run: dotnet build dotnetdemo.csproj
