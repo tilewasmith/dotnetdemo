@@ -1,0 +1,16 @@
+name: azurefilesdemo
+"on":
+    push:
+        branches:
+            - main
+    workflow_dispatch: {}
+
+jobs:
+    build:
+        runs-on: arc-runner-set
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-dotnet@v4
+              with:
+                dotnet-version: '6.x'
+            - run: dotnet build dotnetdemo.csproj
