@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: donet-demo
+  labels:
+    app: donet-demo
+  namespace: aks-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: donet-demo
+  template:
+    metadata:
+      labels:
+        app: donet-demo
+    spec:
+      containers:
+        - name: donet-demo
+          image: trialdemo.azurecr.io/flow-171225622624:latest
+          ports:
+            - containerPort: 5000
